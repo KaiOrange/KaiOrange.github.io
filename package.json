@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "homepage": ".",
+  "main":"./build/index.html",
   "proxy": {
     "/zen": {
       "target": "https://api.github.com",

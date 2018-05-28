@@ -8,7 +8,9 @@ class ParallaxContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.parallax = new Parallax(this.sceneEl);
+    this.parallax = new Parallax(this.sceneEl, {
+      pointerEvents: true
+    });
   }
 
   componentWillUnmount() {

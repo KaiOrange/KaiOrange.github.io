@@ -1,11 +1,12 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 import './index.css';
 import AutoType from './autotype.js';
 
 class AutoTypeComponent extends React.Component {
   constructor() {
     super();
-    this.state = { someKey: 'someValue' };
+    // this.state = { textArray: this.props.text };
   }
 
   componentDidMount() {
@@ -55,8 +56,17 @@ class AutoTypeComponent extends React.Component {
   }
 
   render() {
-    return <div className="auto-type-container" ref={el => (this.el = el)} />;
+    return (
+      <div
+        className="auto-type-container code-editor"
+        ref={el => (this.el = el)}
+      />
+    );
   }
 }
+
+// AutoTypeComponent.propTypes = {
+//     text: PropTypes.array.isRequired,
+// };
 
 export default AutoTypeComponent;
