@@ -1,5 +1,5 @@
 import React from 'react';
-import sky from '../assets/img/sky.jpg';
+// import sky from '../assets/img/sky.jpg';
 import ParallaxContainer from './ParallaxContainer.js';
 import AutoTypeComponent from './AutoType/index.js';
 import { Button } from 'reactstrap';

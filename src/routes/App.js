@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import CustomHome from './CustomHome.js';
 import store from '../store/createStore';
@@ -7,9 +7,9 @@ import store from '../store/createStore';
 function App() {
   return (
     <Provider store={store}>
-      <HashRouter>
+      <BrowserRouter>
         <Route component={CustomHome} />
-      </HashRouter>
+      </BrowserRouter>
     </Provider>
   );
 }

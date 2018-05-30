@@ -4,8 +4,8 @@ import './index.css';
 import AutoType from './autotype.js';
 
 class AutoTypeComponent extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     // this.state = { textArray: this.props.text };
   }
 

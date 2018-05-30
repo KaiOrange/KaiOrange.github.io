@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "homepage": ".",
-  "main":"./build/index.html",
+  "main": "./build/index.html",
   "proxy": {
     "/zen": {
       "target": "https://api.github.com",
@@ -14,12 +14,14 @@
     "axios": "^0.16.2",
     "bootstrap": "4.0.0-beta",
     "codecov": "^2.3.1",
+    "cows": "^2.0.0",
     "husky": "^0.14.3",
     "immutability-helper-x": "^1.0.5",
     "lint-staged": "^4.2.3",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.1",
     "parallax-js": "^3.1.0",
+    "popmotion": "^8.2.3",
     "prettier": "^1.7.4",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",

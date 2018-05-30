@@ -1,9 +1,9 @@
-var self = window.self;
-var root =
-  (typeof self == 'object' && self.self == self && self) ||
-  (typeof global == 'object' && global.global == global && global) ||
-  this ||
-  {};
+// var self = window.self;
+// var root =
+//   (typeof self == 'object' && self.self == self && self) ||
+//   (typeof global == 'object' && global.global == global && global) ||
+//   this ||
+//   {};
 
 function isValidListener(listener) {
   if (typeof listener === 'function') {

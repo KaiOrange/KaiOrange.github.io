@@ -1,3 +1,13 @@
+import cows from './cows.json';
+
+function getRandom(max = 100) {
+  return Math.floor(Math.random() * max);
+}
+
+function randomCows() {
+  return cows[getRandom(cows.length)];
+}
+
 function uuid() {
   var s = [];
   var hexDigits = '0123456789abcdef';
@@ -13,5 +23,8 @@ function uuid() {
 }
 
 export default {
-  uuid
+  uuid,
+  cows,
+  getRandom,
+  randomCows
 };

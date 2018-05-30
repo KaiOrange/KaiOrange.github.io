@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { func } from 'prop-types';
+// import { func } from 'prop-types';
 import {
   Collapse,
   Navbar,
@@ -36,11 +36,17 @@ class CustomNavbar extends Component {
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            {/*
-            <NavLink to="/zenPage" onMouseOver={this.onMouseOver} tag={Link}>
-                Zen
+            <NavLink to="/" tag={Link}>
+              Home
             </NavLink>
-            */}
+            <NavLink to="/cowsPage" tag={Link}>
+              Cows
+            </NavLink>
+            {/*
+                <NavLink to="/zenPage" onMouseOver={this.onMouseOver} tag={Link}>
+                    Zen
+                </NavLink>
+                */}
           </Nav>
         </Collapse>
       </Navbar>
