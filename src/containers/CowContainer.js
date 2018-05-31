@@ -1,12 +1,14 @@
 import React from 'react';
 import CowCard from '../components/CowCard.js';
 import utils from '../utils/index.js';
+import { connect } from 'react-redux';
+import { addCowCard, removeCowCard } from '../store/cowReducer.js';
 
 class CowContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cowCords: {}
+      //   cowCords: {}
     };
     this.speedBase = 10;
     this.hanldeMouseDown = this.hanldeMouseDown.bind(this);
@@ -18,24 +20,18 @@ class CowContainer extends React.Component {
   hanldeMouseDown(e) {
     let pageX = e.pageX - e.target.offsetLeft;
     let pageY = e.pageY - e.target.offsetTop;
-    this.setState(old => {
-      let uuid = utils.uuid();
-      old.cowCords[uuid] = {
-        id: uuid,
-        speedX: utils.getRandom(this.speedBase * 2) - this.speedBase, //X的速度
-        pageX, //X的位置
-        pageY, //X的位置
-        velocity: -utils.getRandom(800) //向上的速度
-      };
-      return old;
+    let uuid = utils.uuid();
+    this.props.addCowCard({
+      id: uuid,
+      speedX: utils.getRandom(this.speedBase * 2) - this.speedBase, //X的速度
+      pageX, //X的位置
+      pageY, //X的位置
+      velocity: -utils.getRandom(800) //向上的速度
     });
   }
 
   onDestroy(id) {
-    this.setState(old => {
-      delete old.cowCords[id]; //删除这条记录
-      return old;
-    });
+    this.props.removeCowCard(id);
   }
 
   render() {
@@ -46,7 +42,7 @@ class CowContainer extends React.Component {
         </div>
         <div className="cow-container" onMouseDown={this.hanldeMouseDown}>
           {(() => {
-            let cowCords = this.state.cowCords;
+            let cowCords = this.props.cowCords;
             let cmList = [];
             for (var id in cowCords) {
               let cowCord = cowCords[id];
@@ -70,4 +66,10 @@ class CowContainer extends React.Component {
   }
 }
 
-export default CowContainer;
+let mapStateToProps = (state, ownProps) => {
+  return { cowCords: state.cowCords };
+};
+let mapDispatchToProps = { addCowCard, removeCowCard };
+
+// export default CowContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(CowContainer);
