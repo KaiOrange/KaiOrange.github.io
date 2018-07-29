@@ -36,7 +36,7 @@ class CowContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="page-layout__viewport main-all-container">
         <div className="masked-text" style={{ fontSize: '2.8rem' }}>
           Try to click?
         </div>
@@ -72,4 +72,7 @@ let mapStateToProps = (state, ownProps) => {
 let mapDispatchToProps = { addCowCard, removeCowCard };
 
 // export default CowContainer;
-export default connect(mapStateToProps, mapDispatchToProps)(CowContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CowContainer);

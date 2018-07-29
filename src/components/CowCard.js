@@ -45,7 +45,7 @@ class CowCard extends React.Component {
 
     this.listener = listen(el, 'mousedown').start(e => {
       this.gravity.setVelocity(-800);
-      speedX = -speedX;
+      speedX = ~~(Math.random() * 2) === 0 ? -speedX : speedX;
       e.stopPropagation();
     });
   }

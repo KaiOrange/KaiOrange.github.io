@@ -65,17 +65,32 @@ body {
                 border-radius: .3rem;
                 width: 100%;
                 height: 100%;
+                overflow: auto;
             }
         }
     }
 }
 
-.cow-container {
-    position: fixed;
+.main-all-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.cow-container{
+    position: absolute;
     left: 0px;
     right: 0;
-    top: 3.5rem;
-    bottom: 0;
+    top: 0rem;
+    height: calc(100vh - 3.5rem);
+    overflow: hidden;
+
+    &::-webkit-scrollbar {
+        width: 0;   /* 滚动条宽度为0 */
+        height: 0; /* 滚动条高度为0 */
+        display: none; /* 滚动条隐藏 */
+    }
+
     .cow-card {
         position: absolute;
         background: #e9ecef;

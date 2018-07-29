@@ -6,7 +6,7 @@ import { Button } from 'reactstrap';
 
 function HomeView() {
   return (
-    <div>
+    <div className="page-layout__viewport">
       <ParallaxContainer className="parallax-container-write-code">
         <div data-depth="0.3">
           <div />

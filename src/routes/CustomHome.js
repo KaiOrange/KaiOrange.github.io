@@ -29,7 +29,7 @@ export function CustomHome({}) {
   return (
     <div>
       <Navbar />
-      <Container className="text-center page-layout__viewport">
+      <Container className="text-center">
         <Switch>
           <Route exact path="/" component={AsyncHome} />
           <Route path="/zenPage" component={AsyncZen} />
@@ -46,4 +46,7 @@ const mapStateToProps = state => ({});
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CustomHome);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CustomHome);
